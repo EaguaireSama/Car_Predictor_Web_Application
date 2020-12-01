@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<div style="background-image: url('images.jpg');">
+<div class="left">
+	<html lang="en">
+	<head>
+    	<meta charset="UTF-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    	<title>Car Price Predictor</title>
+	</head>
+
+	<body>
+
+    	<div style="color:white">
+        	<form action="http://127.0.0.1:5000/predict" method="post">
+            	<h2>Car Price Prediction</h2>
+            	<h3>Year</h3>
+            	<input id="first" name="year" type="number">
+            	<h3>Distance driven in Kilometers</h3><br><input id="second" name="driven" required="required">
+            	<h3>Number of Seats</h3><input id="third" name="seats" required="required" type = "number">
+            	<h3>Mileage</h3><br><input id="fourth" name="mil" required="required">
+            	<h3>Engine Capacity</h3><br><input id="fifth" name="eng" required="required">
+            	<h3>Power</h3><br><input id="sixth" name="pow" required="required">
+				<h3>Fuel Type</h3>
+				<select name="fuel" id="seventh">
+  				<option value=6>CNG</option>
+  				<option value=7>Diesel</option>
+  				<option value=8>LPG</option>
+  				<option value=9>Petrol</option>
+				</select>
+				<h3>Seller Type</h3>
+				<select name="seller" id="eigth">
+  				<option value=10>Dealer</option>
+  				<option value=11>Individual</option>
+  				<option value=12>Trustmark dealer</option>
+				</select>
+				<h3>Transmission Type</h3>
+				<select name="trans" id="ninth">
+  					<option value=13>Automatic</option>
+  					<option value=14>Manual</option>
+				</select>
+				<h3>OwnerShip</h3>
+				<select name="own" id="tenth">
+  					<option value=3>First Hand</option>
+  					<option value=2>Second Hand</option>
+  					<option value=1>Third Hand</option>
+  					<option value=0>Fourth & Above Owner</option>
+  					<option value=4>Test Drive Car</option>
+				</select>
+           		<h3>Company</h3>
+				<select name="comp" id="eleventh">
+  					<option value=18>Ambassador</option>
+  					<option value=18>Ashok</option>
+  					<option value=17>Audi</option>
+  					<option value=16>BMW</option>
+  					<option value=18>Chevrolet</option>
+  					<option value=18>Daewoo</option>
+  					<option value=18>Datsun</option>
+  					<option value=18>Fiat</option>
+  					<option value=18>Force</option>
+  					<option value=18>Ford</option>
+  					<option value=18>Honda</option>
+  					<option value=18>Hyundai</option>
+  					<option value=17>Isuzu</option>
+  					<option value=17>Jaguar</option>
+  					<option value=17>Jeep</option>
+  					<option value=17>Kia</option>
+  					<option value=16>Land Rover</option>
+  					<option value=16>Lexus</option>
+  					<option value=17>MG</option>
+  					<option value=18>Mahindra</option>
+  					<option value=18>Maruti</option>
+  					<option value=17>Mercedes-Benz</option>
+  					<option value=18>Mitsubishi</option>
+  					<option value=18>Nissan</option>
+  					<option value=18>Opel</option>
+  					<option value=18>Peugeot</option>
+  					<option value=18>Renault</option>
+  					<option value=18>Skoda</option>
+  					<option value=18>Tata</option>
+  					<option value=18>Toyota</option>
+  					<option value=18>Volkswagen</option>
+  					<option value=16>Volvo</option>
+				</select>
+            	<br><br><button id="sub" type="submit ">Predict Price</button>
+            	<br>
+
+
+
+        	</form>
+
+
+
+        	<br><br><h3>{{ result }}<h3>
+    	</div>
+
+</div>
+
+
+    	<style>
+        body {
+            background-color: black;
+            text-align: center;
+            padding: 0px;
+        }
+
+        #research {
+            font-size: 18px;
+            width: 100px;
+            height: 23px;
+            top: 23px;
+        }
+
+        #box {
+            border-radius: 60px;
+            border-color: 45px;
+            border-style: solid;
+            font-family: cursive;
+            text-align: center;
+            background-color: rgb(168, 131, 61);
+            font-size: medium;
+            position: absolute;
+            width: 700px;
+            bottom: 9%;
+            height: 850px;
+            right: 30%;
+            padding: 0px;
+            margin: 0px;
+            font-size: 14px;
+        }
+
+        #fuel {
+            width: 83px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 20px;
+        }
+
+        #fuel:hover {
+            background-color: blue;
+        }
+
+        #research {
+            width: 99px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+        }
+
+        #research:hover {
+            background-color: blue;
+        }
+
+        #resea {
+            width: 99px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+        }
+
+        #resea:hover {
+            background-color: coral;
+        }
+
+        #sub {
+            width: 120px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+        }
+
+        #sub:hover {
+            background-color: darkcyan;
+        }
+
+        #first {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        #second {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        #third {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        #fourth {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+        #fifth {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+		#sixth {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+		#seventh {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+        #eigth {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+
+    </style>
+</body>
+
+</html>
